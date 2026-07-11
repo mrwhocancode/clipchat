@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .pill-shadow {
+            box-shadow: 0 4px 0 0 #1a1c1c;
+        }
+        .profile-container {
+            height: calc(100vh - 64px - 80px);
+            overflow-y: auto;
+        }
+        /* Custom scrollbar hiding for clean UI */
+        .profile-container::-webkit-scrollbar {
+            display: none;
+        }
+        .profile-container {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "surface-container": "#eeeeee",
+                    "on-tertiary-container": "#007b8d",
+                    "error": "#ba1a1a",
+                    "surface-bright": "#f9f9f9",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#e1f9ff",
+                    "background": "#f9f9f9",
+                    "primary-container": "#fffc00",
+                    "primary": "#636100",
+                    "outline-variant": "#cac8aa",
+                    "surface-variant": "#e2e2e2",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "primary-fixed-dim": "#cfcc00",
+                    "on-surface": "#1a1c1c",
+                    "surface-dim": "#dadada",
+                    "on-surface-variant": "#494831",
+                    "on-background": "#1a1c1c",
+                    "tertiary-fixed-dim": "#00daf8",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#004e5a",
+                    "on-primary-fixed": "#1d1d00",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-secondary-container": "#646464",
+                    "on-primary-container": "#747300",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f3f3f4",
+                    "inverse-primary": "#cfcc00",
+                    "secondary": "#5e5e5e",
+                    "outline": "#7a785f",
+                    "on-primary-fixed-variant": "#4a4900",
+                    "surface-tint": "#636100",
+                    "on-secondary-fixed-variant": "#474747",
+                    "surface": "#f9f9f9",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed": "#001f25",
+                    "on-secondary-fixed": "#1b1b1b",
+                    "primary-fixed": "#ece900",
+                    "inverse-surface": "#2f3131",
+                    "secondary-container": "#e2e2e2",
+                    "on-error": "#ffffff",
+                    "tertiary": "#006877",
+                    "inverse-on-surface": "#f0f1f1",
+                    "tertiary-fixed": "#a5eeff",
+                    "secondary-fixed": "#e2e2e2",
+                    "surface-container-high": "#e8e8e8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "24px",
+                    "margin-safe": "16px",
+                    "unit": "4px",
+                    "stack-sm": "8px",
+                    "stack-md": "16px",
+                    "gutter": "12px"
+            },
+            "fontFamily": {
+                    "label-bold": ["Be Vietnam Pro"],
+                    "body-md": ["Be Vietnam Pro"],
+                    "display-lg": ["Be Vietnam Pro"],
+                    "headline-lg-mobile": ["Be Vietnam Pro"],
+                    "headline-lg": ["Be Vietnam Pro"],
+                    "label-sm": ["Be Vietnam Pro"]
+            },
+            "fontSize": {
+                    "label-bold": ["14px", {"lineHeight": "18px", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "22px", "fontWeight": "500"}],
+                    "display-lg": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                    "headline-lg-mobile": ["20px", {"lineHeight": "28px", "fontWeight": "800"}],
+                    "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface border-b-[1.5px] border-on-background flex justify-between items-center px-margin-safe h-16">
+<div class="flex items-center justify-center w-10 h-10 active:scale-95 transition-transform duration-100 cursor-pointer">
+<span class="material-symbols-outlined text-primary text-[24px]">chevron_left</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-black text-on-surface">Vivid Ghost</h1>
+<div class="flex items-center justify-center w-10 h-10 active:scale-95 transition-transform duration-100 cursor-pointer">
+<span class="material-symbols-outlined text-primary text-[24px]">settings</span>
+</div>
+</header>
+<!-- Content Canvas -->
+<main class="pt-16 pb-20 profile-container flex flex-col items-center">
+<!-- Profile Header Section -->
+<section class="w-full flex flex-col items-center pt-stack-lg pb-stack-lg px-margin-safe">
+<!-- Avatar with High-Contrast Border -->
+<div class="relative mb-stack-md">
+<div class="w-32 h-32 rounded-full border-[2px] border-on-background overflow-hidden bg-surface-container shadow-[4px_4px_0px_0px_rgba(26,28,28,1)]">
+<img alt="Profile Portrait" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrAY9ODx5aAFYlf3s9dWbDqJkHfOU6_k7vzh0wTlFMwELQNgwQ8N9U-C_ZKPjA4ovlkB-q2lCQMFoiPj08ArqEYMTc4IgA0Sd7STq5FHSJbfIQGJ5CZXFfiAOzUjtLFluew_2I1G72MDLyBfaLExI47S4QP2jNjIzc1WCEP4-aiDRnomzp6lHrGqkh35SKKnHrs7mnHUbdpqufYHyunMLcXlPhTJSEveeeeQbx2nOTSdlbyAp-QMw"/>
+</div>
+<div class="absolute bottom-1 right-1 bg-primary-container border-[1.5px] border-on-background w-8 h-8 rounded-full flex items-center justify-center cursor-pointer active:scale-90 transition-all shadow-[2px_2px_0px_0px_rgba(26,28,28,1)]">
+<span class="material-symbols-outlined text-on-primary-container text-[18px]">edit</span>
+</div>
+</div>
+<!-- Identity -->
+<div class="text-center">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">{{ user.display_name }}</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-bold">@{{ user.username }}</p>
+</div>
+<!-- Action Pill -->
+<button class="mt-stack-lg bg-primary-container text-on-primary-container font-label-bold text-label-bold px-10 py-stack-sm rounded-full border-[2px] border-on-background pill-shadow active:translate-y-1 active:shadow-none transition-all duration-150">
+            Share Profile
+        </button>
+</section>
+<!-- Stats Bento Grid -->
+<section class="w-full px-margin-safe grid grid-cols-2 gap-stack-md mt-unit">
+<div class="bg-surface-container-low border-[1.5px] border-on-background p-stack-md rounded-lg flex flex-col items-center justify-center text-center">
+<span class="font-headline-lg text-headline-lg text-on-surface">12.4K</span>
+<span class="font-label-bold text-[10px] text-secondary uppercase tracking-wider">Ghost Points</span>
+</div>
+<div class="bg-surface-container-low border-[1.5px] border-on-background p-stack-md rounded-lg flex flex-col items-center justify-center text-center">
+<span class="font-headline-lg text-headline-lg text-on-surface">482</span>
+<span class="font-label-bold text-[10px] text-secondary uppercase tracking-wider">Day Streak</span>
+</div>
+</section>
+<!-- List Content (Minimalist) -->
+<section class="w-full px-margin-safe mt-stack-lg">
+<h3 class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest mb-stack-sm px-unit">Stories</h3>
+<div class="space-y-stack-sm">
+<div class="flex items-center justify-between p-stack-md bg-white border-[1.5px] border-on-background rounded-lg hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="flex items-center gap-stack-md">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center border-[1.5px] border-on-background">
+<span class="material-symbols-outlined text-on-primary-container">add_a_photo</span>
+</div>
+<span class="font-body-md text-body-md font-bold">Add to My Story</span>
+</div>
+<span class="material-symbols-outlined text-secondary group-active:translate-x-1 transition-transform">chevron_right</span>
+</div>
+<div class="flex items-center justify-between p-stack-md bg-white border-[1.5px] border-on-background rounded-lg hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="flex items-center gap-stack-md">
+<div class="w-10 h-10 rounded-lg bg-tertiary-container flex items-center justify-center border-[1.5px] border-on-background">
+<span class="material-symbols-outlined text-on-tertiary-container">visibility</span>
+</div>
+<span class="font-body-md text-body-md font-bold">View Public Story</span>
+</div>
+<span class="material-symbols-outlined text-secondary group-active:translate-x-1 transition-transform">chevron_right</span>
+</div>
+</div>
+</section>
+<section class="w-full px-margin-safe mt-stack-lg mb-stack-lg">
+<h3 class="font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest mb-stack-sm px-unit">Friends</h3>
+<div class="flex items-center justify-between p-stack-md bg-white border-[1.5px] border-on-background rounded-lg hover:bg-surface-container transition-colors cursor-pointer group">
+<div class="flex items-center gap-stack-md">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center border-[1.5px] border-on-background">
+<span class="material-symbols-outlined text-on-secondary-container">person_add</span>
+</div>
+<span class="font-body-md text-body-md font-bold">Add Friends</span>
+</div>
+<span class="material-symbols-outlined text-secondary group-active:translate-x-1 transition-transform">chevron_right</span>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 h-20 bg-surface border-t-[1.5px] border-on-background flex justify-around items-center px-4 pb-safe">
+<div class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:opacity-80 active:translate-y-1 transition-all duration-150 cursor-pointer">
+<span class="material-symbols-outlined">chat_bubble</span>
+</div>
+<div class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:opacity-80 active:translate-y-1 transition-all duration-150 cursor-pointer">
+<span class="material-symbols-outlined">photo_camera</span>
+</div>
+<div class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:opacity-80 active:translate-y-1 transition-all duration-150 cursor-pointer">
+<span class="material-symbols-outlined">group</span>
+</div>
+<!-- Active Tab: Profile (using play_circle as indicated by the user's base screen) -->
+<div class="flex items-center justify-center bg-primary-container text-on-primary-container rounded-full w-12 h-12 border-[1.5px] border-on-background shadow-[2px_2px_0px_0px_rgba(26,28,28,1)] hover:opacity-80 active:translate-y-1 transition-all duration-150 cursor-pointer">
+<span class="material-symbols-outlined fill-[1]">play_circle</span>
+</div>
+</nav>
+<script>
+    // Micro-interaction for tactile feedback
+    document.querySelectorAll('.cursor-pointer').forEach(item => {
+        item.addEventListener('touchstart', () => {
+            item.classList.add('scale-[0.97]');
+        });
+        item.addEventListener('touchend', () => {
+            item.classList.remove('scale-[0.97]');
+        });
+    });
+</script>
+</body></html>

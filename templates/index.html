@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vivid Ghost - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#a5eeff",
+                    "background": "#f9f9f9",
+                    "surface-tint": "#636100",
+                    "tertiary-container": "#e1f9ff",
+                    "on-secondary-fixed": "#1b1b1b",
+                    "on-primary-fixed-variant": "#4a4900",
+                    "on-primary-container": "#747300",
+                    "inverse-surface": "#2f3131",
+                    "error-container": "#ffdad6",
+                    "on-surface-variant": "#494831",
+                    "on-background": "#1a1c1c",
+                    "surface-dim": "#dadada",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "surface-variant": "#e2e2e2",
+                    "primary": "#636100",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed": "#001f25",
+                    "surface": "#f9f9f9",
+                    "on-surface": "#1a1c1c",
+                    "inverse-on-surface": "#f0f1f1",
+                    "on-tertiary-fixed-variant": "#004e5a",
+                    "on-secondary-fixed-variant": "#474747",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-container": "#fffc00",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed-dim": "#00daf8",
+                    "secondary-container": "#e2e2e2",
+                    "primary-fixed-dim": "#cfcc00",
+                    "primary-fixed": "#ece900",
+                    "secondary": "#5e5e5e",
+                    "on-primary-fixed": "#1d1d00",
+                    "outline": "#7a785f",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-container": "#646464",
+                    "surface-container-low": "#f3f3f4",
+                    "tertiary": "#006877",
+                    "surface-bright": "#f9f9f9",
+                    "surface-container": "#eeeeee",
+                    "secondary-fixed": "#e2e2e2",
+                    "surface-container-high": "#e8e8e8",
+                    "on-tertiary-container": "#007b8d",
+                    "outline-variant": "#cac8aa",
+                    "inverse-primary": "#cfcc00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "24px",
+                    "margin-safe": "16px",
+                    "gutter": "12px",
+                    "stack-md": "16px",
+                    "stack-sm": "8px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Be Vietnam Pro"],
+                    "display-lg": ["Be Vietnam Pro"],
+                    "label-bold": ["Be Vietnam Pro"],
+                    "body-md": ["Be Vietnam Pro"],
+                    "headline-lg": ["Be Vietnam Pro"],
+                    "label-sm": ["Be Vietnam Pro"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["20px", { "lineHeight": "28px", "fontWeight": "800" }],
+                    "display-lg": ["40px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "900" }],
+                    "label-bold": ["14px", { "lineHeight": "18px", "fontWeight": "700" }],
+                    "body-md": ["16px", { "lineHeight": "22px", "fontWeight": "500" }],
+                    "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                    "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "600" }]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Floating Label Logic */
+        .input-group label {
+            transition: all 0.2s ease-out;
+            pointer-events: none;
+        }
+        .input-group input:focus + label,
+        .input-group input:not(:placeholder-shown) + label {
+            transform: translateY(-26px) scale(0.85);
+            color: #1a1c1c;
+            font-weight: 700;
+        }
+        /* Tap Feedback */
+        .btn-active-state:active {
+            transform: translateY(2px);
+            background-color: #f3f3f4;
+        }
+        .primary-btn-active:active {
+            transform: translateY(2px);
+            background-color: #cfcc00;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface overflow-hidden">
+<div class="flex flex-col min-h-screen px-margin-safe pb-12 pt-20">
+<!-- Logo Section -->
+<header class="flex flex-col items-center mb-16">
+<div class="relative mb-stack-md">
+<!-- Visual Anchor -->
+<div class="w-24 h-24 bg-primary-container border-[1.5px] border-on-background rounded-full flex items-center justify-center rotate-[-8deg] shadow-[4px_4px_0px_0px_#1a1c1c]">
+<span class="material-symbols-outlined text-[48px] text-on-background" style="font-variation-settings: 'FILL' 1;">host</span>
+</div>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-background text-center uppercase tracking-tight">
+                Vivid<br/>Ghost
+            </h1>
+</header>
+<!-- Form Canvas -->
+<main class="flex-grow flex flex-col justify-center max-w-sm mx-auto w-full">
+<form class="space-y-stack-lg" action="/login" method="post">
+<!-- Email/Username Input -->
+<div class="input-group relative">
+<input name="username" class="peer w-full h-14 bg-surface border-[1.5px] border-on-background rounded-lg px-4 font-body-md text-body-md focus:outline-none focus:ring-0 focus:border-on-background transition-all" id="login-id" placeholder=" " type="text"/>
+<label class="absolute left-4 top-4 font-label-bold text-on-surface-variant origin-top-left" for="login-id">
+                        Username or Email
+                    </label>
+</div>
+<!-- Password Input -->
+<div class="input-group relative">
+<input name="password" class="peer w-full h-14 bg-surface border-[1.5px] border-on-background rounded-lg px-4 font-body-md text-body-md focus:outline-none focus:ring-0 focus:border-on-background transition-all" id="password" placeholder=" " type="password"/>
+<label class="absolute left-4 top-4 font-label-bold text-on-surface-variant origin-top-left" for="password">
+                        Password
+                    </label>
+<button class="absolute right-4 top-4 text-on-surface-variant" type="button">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+<!-- Action Button -->
+<div class="pt-stack-md">
+<button class="primary-btn-active w-full h-16 bg-primary-container border-[2px] border-on-background rounded-full font-headline-lg-mobile text-headline-lg-mobile flex items-center justify-center gap-2 transition-transform duration-75 shadow-[0px_4px_0px_0px_#1a1c1c] active:shadow-none">
+                        Log In
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</form>
+<!-- Secondary Actions -->
+<div class="mt-stack-lg flex flex-col items-center gap-stack-md">
+<button class="font-label-bold text-on-surface hover:underline decoration-primary-container decoration-4 underline-offset-4">
+                    Forgot your password?
+                </button>
+</div>
+</main>
+<!-- Footer / Redirect -->
+<footer class="mt-auto pt-stack-lg">
+<div class="flex items-center justify-center gap-stack-sm">
+<p class="font-label-sm text-on-surface-variant">Don't have an account?</p>
+<button class="font-label-bold text-on-surface border-b-[2px] border-on-background">Sign Up</button>
+</div>
+</footer>
+</div>
+<!-- Atmospheric Micro-interaction Script -->
+<script>
+        // Subtle perspective effect on the logo on mouse move / touch
+        const logo = document.querySelector('.rotate-\\[-8deg\\]');
+        document.addEventListener('mousemove', (e) => {
+            const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+            const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+            logo.style.transform = `rotate(${-8 + xAxis}deg) translate(${xAxis/2}px, ${yAxis/2}px)`;
+        });
+
+        // Simple validation check to animate button color
+        const emailInput = document.getElementById('login-id');
+        const passInput = document.getElementById('password');
+        const loginBtn = document.querySelector('.primary-btn-active');
+
+        const validate = () => {
+            if (emailInput.value.length > 0 && passInput.value.length > 0) {
+                loginBtn.classList.add('bg-primary-container');
+                loginBtn.classList.remove('bg-surface-container');
+            } else {
+                loginBtn.classList.remove('bg-primary-container');
+                loginBtn.classList.add('bg-surface-container');
+            }
+        };
+
+        emailInput.addEventListener('input', validate);
+        passInput.addEventListener('input', validate);
+        validate(); // Initial state
+    </script>
+<script src="/static/js/login.js"></script>
+</body></html>
