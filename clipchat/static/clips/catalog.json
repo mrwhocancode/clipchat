@@ -1,0 +1,22 @@
+{
+  "clips": [
+    {
+      "clip_id": "wave.mp4",
+      "title": "Wave",
+      "transcript": "",
+      "keywords": "wave greeting"
+    },
+    {
+      "clip_id": "smile.mp4",
+      "title": "Smile",
+      "transcript": "",
+      "keywords": "smile happy"
+    },
+    {
+      "clip_id": "nod.mp4",
+      "title": "Nod",
+      "transcript": "",
+      "keywords": "nod yes agreement"
+    }
+  ]
+}

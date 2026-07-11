@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<title>Chat with Lester</title>
+<!-- Tailwind CSS V3 CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Be Vietnam Pro -->
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Be Vietnam Pro', 'sans-serif'],
+          },
+          colors: {
+            brand: '#fffc00',
+            surface: {
+              DEFAULT: '#f9f9f9',
+              dim: '#dadada',
+              bright: '#f9f9f9',
+              container: '#f3f3f4',
+              lowest: '#ffffff',
+            },
+            ghost: {
+              blue: '#00baff',
+              gray: '#8b8e94',
+              lightGray: '#f0f0f0'
+            }
+          },
+          borderRadius: {
+            'full': '9999px',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-layout">
+    body {
+      overscroll-behavior-y: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Safe area padding for modern iPhones */
+    .safe-top { padding-top: env(safe-area-inset-top); }
+    .safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+  </style>
+</head>
+<body class="bg-white font-sans h-full flex flex-col text-black">
+<!-- BEGIN: MainHeader -->
+<header class="safe-top flex items-center justify-between px-4 py-2 bg-white border-b border-gray-100 sticky top-0 z-10" data-purpose="chat-header">
+<div class="flex items-center gap-3">
+<!-- Back Arrow -->
+<button aria-label="Go back" class="p-1 -ml-1">
+<svg class="text-[#3183ff]" fill="none" height="26" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="m15 18-6-6 6-6"></path>
+</svg>
+</button>
+<!-- User Avatar and Name Group -->
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-[#e8e9eb] flex items-center justify-center overflow-hidden" data-purpose="user-avatar">
+<svg fill="none" height="24" stroke="#9ca3af" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle>
+</svg>
+</div>
+<span class="font-bold text-xl tracking-tight">Lester</span>
+</div>
+</div>
+<!-- Header Actions -->
+<div class="flex items-center gap-4">
+<button class="text-[#8b8e94]">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+</svg>
+</button>
+<button class="text-[#8b8e94]">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<rect height="16" rx="2" ry="2" width="16" x="4" y="4"></rect><path d="m10 9 5 3-5 3V9z"></path>
+</svg>
+</button>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: ChatContent -->
+<main class="flex-1 overflow-y-auto p-4 flex flex-col justify-end bg-white" data-purpose="chat-messages-container">
+<div class="flex flex-col gap-4">
+<!-- Empty state as per reference -->
+</div>
+</main>
+<!-- END: ChatContent -->
+<!-- BEGIN: ChatFooter -->
+<footer class="px-3 pb-3 bg-white safe-bottom" data-purpose="chat-input-area">
+<div class="flex items-center gap-3">
+<!-- Camera Button -->
+<button class="p-2.5 bg-[#f0f1f2] rounded-full hover:bg-gray-200 transition-colors" data-purpose="camera-action">
+<svg class="text-[#5b5e63]" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle>
+</svg>
+</button>
+<!-- Pill Shaped Input Field -->
+<div class="relative flex-1 flex items-center">
+<input class="w-full h-11 pl-5 pr-12 bg-[#f0f1f2] border-none rounded-full text-[16px] placeholder-[#8b8e94] focus:ring-0" data-purpose="chat-text-input" placeholder="Send a chat" type="text"/>
+<!-- Emoji Button inside input -->
+<button class="absolute right-3 p-1 text-[#8b8e94]" data-purpose="emoji-action">
+<svg fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" x2="9.01" y1="9" y2="9"></line><line x1="15" x2="15.01" y1="9" y2="9"></line>
+</svg>
+</button>
+</div>
+<!-- Mic / Send Button -->
+<button class="p-2 text-[#8b8e94]" data-purpose="voice-action">
+<svg fill="none" height="26" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="26" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" x2="12" y1="19" y2="22"></line>
+</svg>
+</button>
+</div>
+<!-- Home Indicator Spacer -->
+<div class="h-2 w-full"></div>
+</footer>
+<!-- END: ChatFooter -->
+<script data-purpose="ui-interactivity">
+    const input = document.querySelector('[data-purpose="chat-text-input"]');
+    const actionBtn = document.querySelector('[data-purpose="voice-action"]');
+
+    input.addEventListener('input', (e) => {
+      if (e.target.value.trim().length > 0) {
+        actionBtn.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3183ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m5 12 14-7-7 14-2-7-5-2Z"/><path d="m19 5-7 7"/>
+          </svg>
+        `;
+      } else {
+        actionBtn.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/>
+          </svg>
+        `;
+      }
+    });
+  </script>
+<script>
+  window.Y_CHAT = {
+    conversationId: {{ conversation_id }},
+    currentUserId: {{ user.id }},
+    receiverId: {{ other_user.id if other_user else "null" }},
+    receiverName: {{ (other_user.display_name if other_user else '') | tojson }}
+  };
+</script>
+<script src="/static/js/websocket.js"></script>
+<script src="/static/js/chat.js"></script>
+</body></html>

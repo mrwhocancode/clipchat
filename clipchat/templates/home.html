@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chats - Vivid Ghost</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Font: Be Vietnam Pro -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'ghost-yellow': '#fffc00',
+            'ghost-surface': '#f9f9f9',
+            'ghost-dim': '#dadada',
+            'ghost-bright': '#ffffff',
+          },
+          fontFamily: {
+            sans: ['Be Vietnam Pro', 'sans-serif'],
+          },
+          borderRadius: {
+            'full': '9999px',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-layout-styles">
+    body {
+      background-color: #ffffff;
+      -webkit-tap-highlight-color: transparent;
+    }
+    /* Hide scrollbar for cleaner mobile look */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="font-sans text-black select-none">
+<!-- BEGIN: MainContainer -->
+<div class="max-w-md mx-auto min-h-screen flex flex-col bg-white">
+<!-- BEGIN: MainHeader -->
+<header class="sticky top-0 z-50 bg-white px-4 py-3 flex items-center justify-between border-b border-gray-100" data-purpose="app-header">
+<!-- Profile Icon Container -->
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-ghost-dim flex items-center justify-center overflow-hidden border-2 border-white shadow-sm" data-purpose="profile-avatar">
+<img alt="Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvWQumvwTSn3oKSoZTSPW73u5OptTSn4bDZq1dib_ae4P57h6y9xjCjeCq1xf4yTIQGolxGAySWe_CYB2SQvIwbYcvuHGQOHf_5RJ_DCepIh_DCNqpa7pwuUYxoTDCZMRgq7WL-MWZQbhPMtY63hWLpuR-Ptpw9jiuFSu5e-dKXOQ9VsR97SNbhO4B8E7gwvU0D280IzzI8qk5ICcDZE0AZnPM-lnlTRCLeWeW4vCDGj9LqrNY_jY"/>
+</div>
+</div>
+<!-- Title -->
+<h1 class="text-xl font-bold tracking-tight">Chats</h1>
+<!-- Action Icons -->
+<div class="flex items-center gap-4">
+<button aria-label="Search" class="p-2 rounded-full bg-ghost-surface hover:bg-ghost-dim transition-colors">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+<button aria-label="New Chat" class="p-2 rounded-full bg-ghost-yellow hover:opacity-90 transition-opacity shadow-sm">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</button>
+</div>
+</header>
+<!-- END: MainHeader -->
+<!-- BEGIN: ChatListContent -->
+<main class="flex-1 overflow-y-auto no-scrollbar" data-purpose="chat-list">
+<!-- Individual Chat Item (Active/New) -->
+<div class="flex items-center px-4 py-3 hover:bg-gray-50 active:bg-gray-100 transition-colors cursor-pointer" data-purpose="chat-item">
+<div class="relative">
+<div class="w-14 h-14 rounded-full bg-ghost-surface border border-gray-100 flex items-center justify-center text-2xl">
+            👩‍🦰
+          </div>
+<!-- Status Indicator -->
+<div class="absolute bottom-0 right-0 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></div>
+</div>
+<div class="ml-4 flex-1 border-b border-gray-50 pb-3 mt-3">
+<div class="flex justify-between items-baseline">
+<h2 class="text-base font-bold text-black">Audrey</h2>
+<span class="text-xs font-medium text-gray-400">2m</span>
+</div>
+<div class="flex items-center gap-1.5 mt-0.5">
+<!-- New Chat Icon (Blue Square/Rounded) -->
+<div class="w-3 h-3 bg-blue-500 rounded-sm"></div>
+<p class="text-sm font-semibold text-blue-500">New Chat</p>
+</div>
+</div>
+<div class="ml-2 pb-3 mt-3">
+<span class="text-xl">😊</span>
+</div>
+</div>
+</main>
+<!-- END: ChatListContent -->
+<!-- BEGIN: BottomNavigation -->
+<nav class="sticky bottom-0 bg-white border-t border-gray-100 px-6 py-4 flex justify-between items-center" data-purpose="bottom-nav">
+<button class="text-gray-400">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<button class="text-blue-500 relative">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="absolute -top-1 -right-1 w-2 h-2 bg-blue-500 rounded-full"></span>
+</button>
+<button class="w-12 h-12 rounded-full border-4 border-gray-200 flex items-center justify-center">
+<div class="w-8 h-8 rounded-full bg-gray-100"></div>
+</button>
+<button class="text-gray-400">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<button class="text-gray-400">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</nav>
+<!-- END: BottomNavigation -->
+</div>
+<!-- END: MainContainer -->
+<script>
+  window.Y_USER = {
+    id: {{ user.id }},
+    username: "{{ user.username }}",
+    displayName: "{{ user.display_name }}"
+  };
+</script>
+<script src="/static/js/websocket.js"></script>
+<script src="/static/js/search.js"></script>
+<script src="/static/js/home.js"></script>
+</body></html>
